@@ -20,7 +20,7 @@ cursor: pointer}
 	<form action="loginPath" method="post">
 	<center>
 		<fieldset style="width: 300px">
-			<legend> Login to App </legend>
+			<legend> </legend>
 			<table>
 			<tr>
 				<td colspan="2"><c:out value="${errorMsg}"/> </td>
