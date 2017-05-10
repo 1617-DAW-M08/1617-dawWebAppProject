@@ -174,7 +174,7 @@ nav {
 					<td><input type="text" name="username" required="required" /></td>
 				</tr>
 				<tr>
-					<td>Password</td>
+					<td>Password</td> <p> Modificacion professor </p>
 					<td><input type="password" name="password" required="required" /></td>
 				</tr>
 				<tr>
