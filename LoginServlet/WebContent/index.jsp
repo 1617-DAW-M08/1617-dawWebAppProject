@@ -160,7 +160,9 @@ nav {
 		</nav><!-- / nav -->
  
 	</header><!-- / #main-header -->
-	<form action="loginPath" method="post">
+	
+	<div>
+	<form action="loginPath" method="post" style= "overflow:hidden; padding:8%;">
 	<center>
 	<br>
 		<fieldset style="width: 300px">
@@ -174,11 +176,9 @@ nav {
 					<td><input type="text" name="username" required="required" /></td>
 				</tr>
 				<tr>
-<<<<<<< HEAD
+
 					<td>Password</td> <p> Modificacion professor </p>
-=======
-					<td>Password</td> <td>sara</td>//modificado
->>>>>>> Ficheros
+
 					<td><input type="password" name="password" required="required" /></td>
 				</tr>
 				<tr>
@@ -189,7 +189,7 @@ nav {
 		</center>
 		
 	</form>
-	
+	</div>
 	<footer id="main-footer">
 		<p>&copy; 2016-2017 <a href="#">Sara</a></p>
 	</footer> <!-- / #main-footer -->

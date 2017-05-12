@@ -34,6 +34,8 @@ public class LoginServlet extends HttpServlet {
 /**
  * Recolecta los datos del indice , lo que recibe del login 
  */
+   
+    
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String strUserName = request.getParameter("username");// guarda el nombre
 		String strPassword = request.getParameter("password");// guarda la contraseña

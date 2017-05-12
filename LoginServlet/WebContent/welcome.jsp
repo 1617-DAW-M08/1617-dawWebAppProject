@@ -2,8 +2,9 @@
 	pageEncoding="ISO-8859-1"%>
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome <%=session.getAttribute("username")%></title>
+
 <style type="text/css">
 .redText {
    color: red;
@@ -156,7 +157,9 @@ nav {
 Cabecera 
  -->
 <header id="main-header">
-		
+<form method="link" action="logout.jsp">
+    <input type="submit" value="Logout"/>
+</form>
 		<a id="logo-header" href="#">
 			<span class="site-name">Sara Barrientos </span>
 			<span class="site-desc">PROYECTO DAW 16-17</span>
@@ -173,17 +176,34 @@ Cabecera
 	
 <!-- 
 Segun con el usuario que acceda le mostara un mensaje u otro.
- -->	
+ -->
+ <div style= "overflow:hidden; padding:8%";>	
 	<h3>Bienvenido</h3>
 	<hr />
-<%	if (session.getAttribute("username").equals("admin")) {
-		out.print("<h4>Hello, <span class='redText'>" + session.getAttribute("username") + "</span></h4> Ya has accedido a tu cuenta para poder empezar a trabajar ");
+<%!	
+ public String formataStr(String val){
+	String resultado;
+	if(val == null){
+		resultado="";
+		
+	}
+	else{
+		resultado=val;
+	}
+	return resultado;
+}
+%>
+
+<%
+
+if (session.getAttribute("username").equals("admin")) {
+		out.print("<h4>Hola, <span class='redText'>" + formataStr((String)session.getAttribute("username")) + "</span></h4> Ya has accedido a tu cuenta para poder empezar a trabajar ");
 	
 }else{
-		out.print("<h4>Hello, <span class='blueText'>" + session.getAttribute("username") + "</span></h4> Ya has accedido preparado para empezar");
+		out.print("<h4>Hola, <span class='blueText'>" + formataStr((String)session.getAttribute("username")) + "</span></h4> Ya has accedido preparado para empezar");
 }%>
 
-	
+	</div>
 <footer id="main-footer">
 		<p>&copy; 2016-2017 <a href="#">Sara</a></p>
 	</footer> 
