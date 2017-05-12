@@ -151,6 +151,10 @@ nav {
 </style>
 </head>
 <body>
+
+<!-- 
+Cabecera 
+ -->
 <header id="main-header">
 		
 		<a id="logo-header" href="#">
@@ -166,21 +170,23 @@ nav {
 		</nav><!-- / nav -->
  
 	</header><!-- / #main-header -->
-	<h3>Login successful!!!</h3>
+	
+<!-- 
+Segun con el usuario que acceda le mostara un mensaje u otro.
+ -->	
+	<h3>Bienvenido</h3>
 	<hr />
 <%	if (session.getAttribute("username").equals("admin")) {
-		out.print("<h4>Hello, <span class='redText'>" + session.getAttribute("username") + "</span></h4> <p>Ya puedes acceder a la información de los datos de la aplicación.</p>");%>
+		out.print("<h4>Hello, <span class='redText'>" + session.getAttribute("username") + "</span></h4> Ya has accedido a tu cuenta para poder empezar a trabajar ");
 	
-<%}
-
-else{
-		out.print("<h4>Hello, <span class='blueText'>" + session.getAttribute("username") + "</span></h4><p>Ya puedes visualizar a la información de los datos de la aplicación. Sin poder guardar los cambios de determinadas acciones</p>");
+}else{
+		out.print("<h4>Hello, <span class='blueText'>" + session.getAttribute("username") + "</span></h4> Ya has accedido preparado para empezar");
 }%>
 
 	
 <footer id="main-footer">
 		<p>&copy; 2016-2017 <a href="#">Sara</a></p>
-	</footer> <!-- / #main-footer -->
+	</footer> 
 
 </body>
 </html>

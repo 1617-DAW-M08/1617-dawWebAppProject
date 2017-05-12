@@ -16,21 +16,27 @@ import java.sql.SQLException;
 /**
  * Servlet implementation class LoginServlet
  */
+
+/**
+ *Variables de la base de datos  
+ */
 @WebServlet(name = "Login", urlPatterns = { "/Login" })
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    private static final String DBNAME = "actividad4";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "";
+    private static final String DBNAME = "actividad4";// nombre de la base de datos
+    private static final String DB_USERNAME = "root"; // usuario de la base de datos
+    private static final String DB_PASSWORD = ""; // contraseña base de datos
 	
     private static final String LOGIN_QUERY = "SELECT usuari,password FROM login WHERE usuari=? and password=?";
-    private static final String HOME_PAGE = "./welcome.jsp";
-    private static final String LOGIN_PAGE = "./index.jsp";
+    private static final String HOME_PAGE = "./welcome.jsp";// archivo donde redigira cuando haga login
+    private static final String LOGIN_PAGE = "./index.jsp";// archivo con el codigo donde permite hacer el login
 
-
+/**
+ * Recolecta los datos del indice , lo que recibe del login 
+ */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String strUserName = request.getParameter("username");
-		String strPassword = request.getParameter("password");
+		String strUserName = request.getParameter("username");// guarda el nombre
+		String strPassword = request.getParameter("password");// guarda la contraseña
 		String strErrMsg = null;
 		HttpSession session = request.getSession();
 		boolean isValidLogon = false;
@@ -54,7 +60,13 @@ public class LoginServlet extends HttpServlet {
 		}
 		
 	}
-	
+	/**
+	 * Verifica que el usuario existe en la base de datos a traves de :
+	 * @param strUserName : comprueba con el nombre
+	 * @param strPassword : comprueba la contraseña corresponda con el usuario
+	 * @return
+	 * @throws Exception
+	 */
 	private boolean authenticateLogin(String strUserName, String strPassword) throws Exception {
 		boolean isValid = false;
 		Connection conn = null;
@@ -87,6 +99,11 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return Conexion con la base de datos , utilizando las variables mencionadas arriba 
+	 * @throws Exception
+	 */
 	private Connection getConnection() throws Exception {
 		Connection conn = null;
 		try {
