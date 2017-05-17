@@ -13,7 +13,8 @@ Para poder ejecutar un Login des de un servidor necesitaremos:
 -Tomcat (apache)  
 -JDK(version de java)  
 -IDE(p ej. eclipse)  
-  *Crear un arhivo java con el codigo (Login)  
-  *Crear archivos JSP para poder introducir lo que los usuarios veran cuando accedan con su usuario y contraseña.  
+  *Crear un archivo java con el codigo (Login), que es el que se encarga de poder   generar correctamente el funcionamiento de la aplicación. 
+  *Crear archivos JSP para poder introducir lo que los usuarios veran  
+  cuando accedan con su usuario y contraseña.  
 -Utilizar alguna aplicación para poder crear la base de datos (p ej. phpmyadmin,mysql workbench)
 
